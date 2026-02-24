@@ -1,5 +1,6 @@
 #include "search.h"
 
+// Recorre el arreglo elemento por elemento de inicio a fin. Es seguro, por otro lado, resulta lento para listas muy grandes.
 int busquedaSecuencial(int arreglo[], int n, int valor)
 {
     int i;
@@ -15,6 +16,7 @@ int busquedaSecuencial(int arreglo[], int n, int valor)
     return -1; // no encontrado
 }
 
+// Corta el espacio de busqueda a la mitad repetidamente, como buscar una palabra en un diccionario. Es sumamente rapido, sin embargo, requiere que el arreglo este previamente ordenado.
 int busquedaBinaria(int arreglo[], int n, int valor)
 {
     int izquierda = 0;

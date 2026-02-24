@@ -1,15 +1,15 @@
 #include "sort.h"
+#include <iostream>
+using namespace std;
 
-void ordenarBurbuja(int arreglo[], int n)
+// Empuja los valores mas grandes hacia el final del arreglo mediante intercambios adyacentes.
+void ordenarBurbuja(int arreglo[], int n, bool mostrar)
 {
     int i, j, temp;
-
-    for (i = 0; i < n - 1; i++)
-    {
-        for (j = 0; j < n - 1 - i; j++)
-        {
-            if (arreglo[j] > arreglo[j + 1])
-            {
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+            if (arreglo[j] > arreglo[j + 1]) {
+                if (mostrar) cout << "[Burbuja] Intercambiando " << arreglo[j] << " con " << arreglo[j + 1] << endl;
                 temp = arreglo[j];
                 arreglo[j] = arreglo[j + 1];
                 arreglo[j + 1] = temp;
@@ -18,128 +18,89 @@ void ordenarBurbuja(int arreglo[], int n)
     }
 }
 
-void ordenarSeleccion(int arreglo[], int n)
+// Escanea la lista buscando el valor minimo para colocarlo al inicio, iteracion por iteracion.
+void ordenarSeleccion(int arreglo[], int n, bool mostrar)
 {
     int i, j, min, temp;
-
-    for (i = 0; i < n - 1; i++)
-    {
+    for (i = 0; i < n - 1; i++) {
         min = i;
-
-        for (j = i + 1; j < n; j++)
-        {
-            if (arreglo[j] < arreglo[min])
-            {
+        for (j = i + 1; j < n; j++) {
+            if (arreglo[j] < arreglo[min]) {
                 min = j;
             }
         }
-
+        if (mostrar && min != i) cout << "[Seleccion] Moviendo minimo " << arreglo[min] << " a posicion " << i << endl;
         temp = arreglo[i];
         arreglo[i] = arreglo[min];
         arreglo[min] = temp;
     }
 }
 
-void ordenarInsercion(int arreglo[], int n)
+// Acomoda cada elemento nuevo en su posicion correcta respecto a los anteriores, similar a ordenar cartas en la mano.
+void ordenarInsercion(int arreglo[], int n, bool mostrar)
 {
     int i, j, clave;
-
-    for (i = 1; i < n; i++)
-    {
+    for (i = 1; i < n; i++) {
         clave = arreglo[i];
         j = i - 1;
-
-        while (j >= 0 && arreglo[j] > clave)
-        {
+        while (j >= 0 && arreglo[j] > clave) {
+            if (mostrar) cout << "[Insercion] Desplazando " << arreglo[j] << " a la derecha" << endl;
             arreglo[j + 1] = arreglo[j];
             j--;
         }
-
         arreglo[j + 1] = clave;
     }
 }
 
-void quickSort(int arreglo[], int izquierda, int derecha, int& comparaciones, int& intercambios)
+// Selecciona un punto de referencia (pivote) para dividir los datos; manda los menores a la izquierda y los mayores a la derecha.
+void quickSort(int arreglo[], int izquierda, int derecha, int& comparaciones, int& intercambios, bool mostrar)
 {
-    int i = izquierda;
-    int j = derecha;
+    int i = izquierda, j = derecha;
     int pivote = arreglo[(izquierda + derecha) / 2];
     int temp;
 
-    while (i <= j)
-    {
-        while (arreglo[i] < pivote)
-        {
-            i++;
-            comparaciones++;
-        }
+    if (mostrar) cout << "[QuickSort] Pivote: " << pivote << " Rango: " << izquierda << "-" << derecha << endl;
 
-        while (arreglo[j] > pivote)
-        {
-            j--;
-            comparaciones++;
-        }
-
-        if (i <= j)
-        {
-            temp = arreglo[i];
-            arreglo[i] = arreglo[j];
-            arreglo[j] = temp;
-            intercambios++;
-
-            i++;
-            j--;
+    while (i <= j) {
+        while (arreglo[i] < pivote) { i++; comparaciones++; }
+        while (arreglo[j] > pivote) { j--; comparaciones++; }
+        if (i <= j) {
+            temp = arreglo[i]; arreglo[i] = arreglo[j]; arreglo[j] = temp;
+            intercambios++; i++; j--;
         }
     }
-
-    if (izquierda < j)
-        quickSort(arreglo, izquierda, j, comparaciones, intercambios);
-
-    if (i < derecha)
-        quickSort(arreglo, i, derecha, comparaciones, intercambios);
+    if (izquierda < j) quickSort(arreglo, izquierda, j, comparaciones, intercambios, mostrar);
+    if (i < derecha) quickSort(arreglo, i, derecha, comparaciones, intercambios, mostrar);
 }
 
-void merge(int arreglo[], int izquierda, int medio, int derecha, int& comparaciones)
+// Funcion auxiliar que fusiona dos sub-arreglos previamente ordenados en uno solo.
+void merge(int arreglo[], int izquierda, int medio, int derecha, int& comparaciones, bool mostrar)
 {
-    int i = izquierda;
-    int j = medio + 1;
-    int k = 0;
-    int temp[100];  // tamaño fijo (sin memoria dinámica)
+    int i = izquierda, j = medio + 1, k = 0;
+    int* temp = new int[derecha - izquierda + 1](); // Memoria dinámica para el temporal
 
-    while (i <= medio && j <= derecha)
-    {
+    while (i <= medio && j <= derecha) {
         comparaciones++;
-
-        if (arreglo[i] <= arreglo[j])
-        {
-            temp[k++] = arreglo[i++];
-        }
-        else
-        {
-            temp[k++] = arreglo[j++];
-        }
+        if (arreglo[i] <= arreglo[j]) temp[k++] = arreglo[i++];
+        else temp[k++] = arreglo[j++];
     }
+    while (i <= medio) temp[k++] = arreglo[i++];
+    while (j <= derecha) temp[k++] = arreglo[j++];
 
-    while (i <= medio)
-        temp[k++] = arreglo[i++];
+    for (i = izquierda, k = 0; i <= derecha; i++, k++) arreglo[i] = temp[k];
 
-    while (j <= derecha)
-        temp[k++] = arreglo[j++];
-
-    for (i = izquierda, k = 0; i <= derecha; i++, k++)
-        arreglo[i] = temp[k];
+    if (mostrar) cout << "[Merge] Fusionando rango " << izquierda << " a " << derecha << endl;
+    delete[] temp; // Importante liberar memoria
 }
 
-void mergeSort(int arreglo[], int izquierda, int derecha, int& comparaciones)
+// Divide el arreglo por la mitad recursivamente hasta tener elementos individuales, para luego unirlos ordenados usando merge.
+void mergeSort(int arreglo[], int izquierda, int derecha, int& comparaciones, bool mostrar)
 {
     int medio;
-
-    if (izquierda < derecha)
-    {
+    if (izquierda < derecha) {
         medio = (izquierda + derecha) / 2;
-
-        mergeSort(arreglo, izquierda, medio, comparaciones);
-        mergeSort(arreglo, medio + 1, derecha, comparaciones);
-        merge(arreglo, izquierda, medio, derecha, comparaciones);
+        mergeSort(arreglo, izquierda, medio, comparaciones, mostrar);
+        mergeSort(arreglo, medio + 1, derecha, comparaciones, mostrar);
+        merge(arreglo, izquierda, medio, derecha, comparaciones, mostrar);
     }
 }

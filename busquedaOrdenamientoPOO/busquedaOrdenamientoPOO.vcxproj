@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3533f0f1-bc8f-4400-ab5f-552df6a41be7}</ProjectGuid>
-    <RootNamespace>busquedaOrdenamiento</RootNamespace>
+    <ProjectGuid>{c3490763-080e-4132-b962-d7c3f3001266}</ProjectGuid>
+    <RootNamespace>busquedaOrdenamientoPOO</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,17 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sort.cpp" />
-    <ClCompile Include="busquedaOrdenamiento.cpp" />
-    <ClCompile Include="search.cpp" />
-    <ClCompile Include="utils.cpp" />
-    <ClCompile Include="view.cpp" />
+    <ClCompile Include="GestorArreglo.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="search.h" />
-    <ClInclude Include="sort.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="view.h" />
+    <ClInclude Include="GestorArreglo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

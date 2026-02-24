@@ -1,0 +1,217 @@
+\doxysection{Gestor\+Arreglo Class Reference}
+\hypertarget{class_gestor_arreglo}{}\label{class_gestor_arreglo}\index{GestorArreglo@{GestorArreglo}}
+
+
+Administra la memoria del arreglo y ejecuta los algoritmos. Centraliza los datos y sus operaciones.  
+
+
+
+
+{\ttfamily \+\#include $<$Gestor\+Arreglo.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gestor_arreglo_ad38fd16db338c5d3de579fae12277870}\label{class_gestor_arreglo_ad38fd16db338c5d3de579fae12277870} 
+{\bfseries Gestor\+Arreglo} ()
+\begin{DoxyCompactList}\small\item\em Inicializa el puntero en nulo y establece el estado base del objeto. \end{DoxyCompactList}\item 
+\Hypertarget{class_gestor_arreglo_ae3fb8b4cbe24150b4ab785ed3940ce07}\label{class_gestor_arreglo_ae3fb8b4cbe24150b4ab785ed3940ce07} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Gestor\+Arreglo} ()
+\begin{DoxyCompactList}\small\item\em Libera la memoria dinamica ocupada por el arreglo al destruir la instancia. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_a80547101b614d22fead9f432c2b086c8}{configurar}} (int tam, bool unicos)
+\begin{DoxyCompactList}\small\item\em Dimensiona el arreglo en memoria. Genera numeros unicos o con valores repetidos. \end{DoxyCompactList}\item 
+\Hypertarget{class_gestor_arreglo_a2198c45e1cd2a9db7cd8514249b6cbc0}\label{class_gestor_arreglo_a2198c45e1cd2a9db7cd8514249b6cbc0} 
+void {\bfseries desordenar} ()
+\begin{DoxyCompactList}\small\item\em Revuelve los elementos actuales usando una semilla de tiempo real, destruyendo cualquier orden previo. \end{DoxyCompactList}\item 
+\Hypertarget{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}\label{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56} 
+void {\bfseries mostrar} ()
+\begin{DoxyCompactList}\small\item\em Despliega el contenido en pantalla (limita la impresion a 50 elementos para evitar saturacion). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_gestor_arreglo_a1cc1187bd7bc626466948d061f9ea8aa}{get\+Esta\+Ordenado}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el estado actual del arreglo. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_gestor_arreglo_aee91ab7511d6c03c431c591569640800}{getN}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tamano actual del arreglo. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_gestor_arreglo_a01a38c323b26f41affcb9659ee8e0929}{busqueda\+Secuencial}} (int valor)
+\begin{DoxyCompactList}\small\item\em Escanea linealmente la estructura en busca del elemento. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_gestor_arreglo_af9b7e167e7cdc6cd7a91c2f1864dcbc6}{busqueda\+Binaria}} (int valor)
+\begin{DoxyCompactList}\small\item\em Asegura el ordenamiento previo y busca el valor seccionando el arreglo por mitades. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_a96537d60d09c738fa5d9ef58384ad2cf}{ordenar\+Burbuja}} (bool \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}})
+\begin{DoxyCompactList}\small\item\em Ordena moviendo los valores altos al fondo iterativamente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_a62c6b6b7c155774b803617a217b8579e}{ordenar\+Seleccion}} (bool \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}})
+\begin{DoxyCompactList}\small\item\em Posiciona el valor mas bajo encontrado al inicio del ciclo actual. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_a8bb7363a228a762a792c927f04957d1a}{ordenar\+Insercion}} (bool \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}})
+\begin{DoxyCompactList}\small\item\em Inserta cada numero en su lugar correspondiente desplazando los demas a la derecha. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_aea8ac2958b190a1daead1692eab67a39}{ordenar\+Quick\+Sort}} (bool \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}})
+\begin{DoxyCompactList}\small\item\em Fragmenta la informacion basandose en un pivote central recursivamente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_gestor_arreglo_a22105a3139a6cea5e532e2f2676bdb68}{ordenar\+Merge\+Sort}} (bool \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}})
+\begin{DoxyCompactList}\small\item\em Separa el arreglo iterativamente por mitades para procesar su orden. \end{DoxyCompactList}\item 
+\Hypertarget{class_gestor_arreglo_aba9b785f6c6d42016e65229a69bf710d}\label{class_gestor_arreglo_aba9b785f6c6d42016e65229a69bf710d} 
+void {\bfseries comparar\+Tiempos} ()
+\begin{DoxyCompactList}\small\item\em Crea un entorno aislado clonando el arreglo, ejecuta cada metodo midiendo su duracion exacta y restaura los datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Administra la memoria del arreglo y ejecuta los algoritmos. Centraliza los datos y sus operaciones. 
+
+\label{doc-func-members}
+\Hypertarget{class_gestor_arreglo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gestor_arreglo_af9b7e167e7cdc6cd7a91c2f1864dcbc6}\index{GestorArreglo@{GestorArreglo}!busquedaBinaria@{busquedaBinaria}}
+\index{busquedaBinaria@{busquedaBinaria}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{busquedaBinaria()}{busquedaBinaria()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_af9b7e167e7cdc6cd7a91c2f1864dcbc6} 
+int Gestor\+Arreglo::\+busqueda\+Binaria (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Asegura el ordenamiento previo y busca el valor seccionando el arreglo por mitades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El numero entero que se desea encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El indice donde se encontro el valor, o -\/1 si no existe. 
+\end{DoxyReturn}
+\Hypertarget{class_gestor_arreglo_a01a38c323b26f41affcb9659ee8e0929}\index{GestorArreglo@{GestorArreglo}!busquedaSecuencial@{busquedaSecuencial}}
+\index{busquedaSecuencial@{busquedaSecuencial}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{busquedaSecuencial()}{busquedaSecuencial()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a01a38c323b26f41affcb9659ee8e0929} 
+int Gestor\+Arreglo::\+busqueda\+Secuencial (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Escanea linealmente la estructura en busca del elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El numero entero que se desea encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El indice donde se encontro el valor, o -\/1 si no existe. 
+\end{DoxyReturn}
+\Hypertarget{class_gestor_arreglo_a80547101b614d22fead9f432c2b086c8}\index{GestorArreglo@{GestorArreglo}!configurar@{configurar}}
+\index{configurar@{configurar}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{configurar()}{configurar()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a80547101b614d22fead9f432c2b086c8} 
+void Gestor\+Arreglo::\+configurar (\begin{DoxyParamCaption}\item[{int}]{tam}{, }\item[{bool}]{unicos}{}\end{DoxyParamCaption})}
+
+
+
+Dimensiona el arreglo en memoria. Genera numeros unicos o con valores repetidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tam} & El tamano total (N) del arreglo a generar. \\
+\hline
+{\em unicos} & Verdadero para generar sin repeticiones, Falso para aleatorios puros. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gestor_arreglo_a1cc1187bd7bc626466948d061f9ea8aa}\index{GestorArreglo@{GestorArreglo}!getEstaOrdenado@{getEstaOrdenado}}
+\index{getEstaOrdenado@{getEstaOrdenado}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{getEstaOrdenado()}{getEstaOrdenado()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a1cc1187bd7bc626466948d061f9ea8aa} 
+bool Gestor\+Arreglo::\+get\+Esta\+Ordenado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el estado actual del arreglo. 
+
+\begin{DoxyReturn}{Returns}
+Verdadero si esta ordenado, falso de lo contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_gestor_arreglo_aee91ab7511d6c03c431c591569640800}\index{GestorArreglo@{GestorArreglo}!getN@{getN}}
+\index{getN@{getN}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{getN()}{getN()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_aee91ab7511d6c03c431c591569640800} 
+int Gestor\+Arreglo::\+getN (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el tamano actual del arreglo. 
+
+\begin{DoxyReturn}{Returns}
+Entero con la cantidad de elementos (N). 
+\end{DoxyReturn}
+\Hypertarget{class_gestor_arreglo_a96537d60d09c738fa5d9ef58384ad2cf}\index{GestorArreglo@{GestorArreglo}!ordenarBurbuja@{ordenarBurbuja}}
+\index{ordenarBurbuja@{ordenarBurbuja}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{ordenarBurbuja()}{ordenarBurbuja()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a96537d60d09c738fa5d9ef58384ad2cf} 
+void Gestor\+Arreglo::\+ordenar\+Burbuja (\begin{DoxyParamCaption}\item[{bool}]{mostrar}{}\end{DoxyParamCaption})}
+
+
+
+Ordena moviendo los valores altos al fondo iterativamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}} & Verdadero para imprimir cada paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gestor_arreglo_a8bb7363a228a762a792c927f04957d1a}\index{GestorArreglo@{GestorArreglo}!ordenarInsercion@{ordenarInsercion}}
+\index{ordenarInsercion@{ordenarInsercion}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{ordenarInsercion()}{ordenarInsercion()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a8bb7363a228a762a792c927f04957d1a} 
+void Gestor\+Arreglo::\+ordenar\+Insercion (\begin{DoxyParamCaption}\item[{bool}]{mostrar}{}\end{DoxyParamCaption})}
+
+
+
+Inserta cada numero en su lugar correspondiente desplazando los demas a la derecha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}} & Verdadero para imprimir cada paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gestor_arreglo_a22105a3139a6cea5e532e2f2676bdb68}\index{GestorArreglo@{GestorArreglo}!ordenarMergeSort@{ordenarMergeSort}}
+\index{ordenarMergeSort@{ordenarMergeSort}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{ordenarMergeSort()}{ordenarMergeSort()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a22105a3139a6cea5e532e2f2676bdb68} 
+void Gestor\+Arreglo::\+ordenar\+Merge\+Sort (\begin{DoxyParamCaption}\item[{bool}]{mostrar}{}\end{DoxyParamCaption})}
+
+
+
+Separa el arreglo iterativamente por mitades para procesar su orden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}} & Verdadero para imprimir cada paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gestor_arreglo_aea8ac2958b190a1daead1692eab67a39}\index{GestorArreglo@{GestorArreglo}!ordenarQuickSort@{ordenarQuickSort}}
+\index{ordenarQuickSort@{ordenarQuickSort}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{ordenarQuickSort()}{ordenarQuickSort()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_aea8ac2958b190a1daead1692eab67a39} 
+void Gestor\+Arreglo::\+ordenar\+Quick\+Sort (\begin{DoxyParamCaption}\item[{bool}]{mostrar}{}\end{DoxyParamCaption})}
+
+
+
+Fragmenta la informacion basandose en un pivote central recursivamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}} & Verdadero para imprimir cada paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gestor_arreglo_a62c6b6b7c155774b803617a217b8579e}\index{GestorArreglo@{GestorArreglo}!ordenarSeleccion@{ordenarSeleccion}}
+\index{ordenarSeleccion@{ordenarSeleccion}!GestorArreglo@{GestorArreglo}}
+\doxysubsubsection{\texorpdfstring{ordenarSeleccion()}{ordenarSeleccion()}}
+{\footnotesize\ttfamily \label{class_gestor_arreglo_a62c6b6b7c155774b803617a217b8579e} 
+void Gestor\+Arreglo::\+ordenar\+Seleccion (\begin{DoxyParamCaption}\item[{bool}]{mostrar}{}\end{DoxyParamCaption})}
+
+
+
+Posiciona el valor mas bajo encontrado al inicio del ciclo actual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}} & Verdadero para imprimir cada paso en consola. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+busqueda\+Ordenamiento\+POO/\+Gestor\+Arreglo.\+h\item 
+busqueda\+Ordenamiento\+POO/\+Gestor\+Arreglo.\+cpp\end{DoxyCompactItemize}

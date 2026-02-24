@@ -1,0 +1,135 @@
+\doxysection{busqueda\+Ordenamiento/\+sort.h File Reference}
+\hypertarget{sort_8h}{}\label{sort_8h}\index{busquedaOrdenamiento/sort.h@{busquedaOrdenamiento/sort.h}}
+
+
+Declaracion de los algoritmos de ordenamiento iterativos y recursivos.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{sort_8h_a04c00918d91cc9a1da4273101c8ea2f1}{ordenar\+Burbuja}} (int arreglo\+[$\,$]\+, int n, bool mostrar=false)
+\begin{DoxyCompactList}\small\item\em Empuja los valores mas grandes hacia el final del arreglo mediante intercambios adyacentes. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{sort_8h_a8a1ad56bbb967ea346d4667f6d3fe94f}{ordenar\+Seleccion}} (int arreglo\+[$\,$]\+, int n, bool mostrar=false)
+\begin{DoxyCompactList}\small\item\em Escanea la lista buscando el valor minimo para colocarlo al inicio iterativamente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{sort_8h_a87b829fd659471c3fd9864b0a605eb00}{ordenar\+Insercion}} (int arreglo\+[$\,$]\+, int n, bool mostrar=false)
+\begin{DoxyCompactList}\small\item\em Acomoda cada elemento nuevo en su posicion correcta desplazando los demas a la derecha. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{sort_8h_a4886199729fb0652c13a77be092f2afc}{quick\+Sort}} (int arreglo\+[$\,$]\+, int izquierda, int derecha, int \&comparaciones, int \&intercambios, bool mostrar=false)
+\begin{DoxyCompactList}\small\item\em Fragmenta la informacion basandose en un pivote central recursivamente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{sort_8h_abdf58439a993e7265e3c58303dc7a18d}{merge\+Sort}} (int arreglo\+[$\,$]\+, int izquierda, int derecha, int \&comparaciones, bool mostrar=false)
+\begin{DoxyCompactList}\small\item\em Divide el arreglo recursivamente por la mitad y fusiona las sublistas de forma ordenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaracion de los algoritmos de ordenamiento iterativos y recursivos. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{sort_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{sort_8h_abdf58439a993e7265e3c58303dc7a18d}\index{sort.h@{sort.h}!mergeSort@{mergeSort}}
+\index{mergeSort@{mergeSort}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{mergeSort()}{mergeSort()}}
+{\footnotesize\ttfamily \label{sort_8h_abdf58439a993e7265e3c58303dc7a18d} 
+void merge\+Sort (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{izquierda}{, }\item[{int}]{derecha}{, }\item[{int \&}]{comparaciones}{, }\item[{bool}]{mostrar}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Divide el arreglo recursivamente por la mitad y fusiona las sublistas de forma ordenada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em izquierda} & Indice inicial del rango a ordenar. \\
+\hline
+{\em derecha} & Indice final del rango a ordenar. \\
+\hline
+{\em comparaciones} & Referencia al contador de comparaciones para medir rendimiento. \\
+\hline
+{\em mostrar} & Verdadero para imprimir el proceso paso a paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8h_a04c00918d91cc9a1da4273101c8ea2f1}\index{sort.h@{sort.h}!ordenarBurbuja@{ordenarBurbuja}}
+\index{ordenarBurbuja@{ordenarBurbuja}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{ordenarBurbuja()}{ordenarBurbuja()}}
+{\footnotesize\ttfamily \label{sort_8h_a04c00918d91cc9a1da4273101c8ea2f1} 
+void ordenar\+Burbuja (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{, }\item[{bool}]{mostrar}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Empuja los valores mas grandes hacia el final del arreglo mediante intercambios adyacentes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em mostrar} & Verdadero para imprimir el proceso paso a paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8h_a87b829fd659471c3fd9864b0a605eb00}\index{sort.h@{sort.h}!ordenarInsercion@{ordenarInsercion}}
+\index{ordenarInsercion@{ordenarInsercion}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{ordenarInsercion()}{ordenarInsercion()}}
+{\footnotesize\ttfamily \label{sort_8h_a87b829fd659471c3fd9864b0a605eb00} 
+void ordenar\+Insercion (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{, }\item[{bool}]{mostrar}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Acomoda cada elemento nuevo en su posicion correcta desplazando los demas a la derecha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em mostrar} & Verdadero para imprimir el proceso paso a paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8h_a8a1ad56bbb967ea346d4667f6d3fe94f}\index{sort.h@{sort.h}!ordenarSeleccion@{ordenarSeleccion}}
+\index{ordenarSeleccion@{ordenarSeleccion}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{ordenarSeleccion()}{ordenarSeleccion()}}
+{\footnotesize\ttfamily \label{sort_8h_a8a1ad56bbb967ea346d4667f6d3fe94f} 
+void ordenar\+Seleccion (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{, }\item[{bool}]{mostrar}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Escanea la lista buscando el valor minimo para colocarlo al inicio iterativamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em mostrar} & Verdadero para imprimir el proceso paso a paso en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8h_a4886199729fb0652c13a77be092f2afc}\index{sort.h@{sort.h}!quickSort@{quickSort}}
+\index{quickSort@{quickSort}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{quickSort()}{quickSort()}}
+{\footnotesize\ttfamily \label{sort_8h_a4886199729fb0652c13a77be092f2afc} 
+void quick\+Sort (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{izquierda}{, }\item[{int}]{derecha}{, }\item[{int \&}]{comparaciones}{, }\item[{int \&}]{intercambios}{, }\item[{bool}]{mostrar}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Fragmenta la informacion basandose en un pivote central recursivamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em izquierda} & Indice inicial del rango a ordenar. \\
+\hline
+{\em derecha} & Indice final del rango a ordenar. \\
+\hline
+{\em comparaciones} & Referencia al contador de comparaciones para medir rendimiento. \\
+\hline
+{\em intercambios} & Referencia al contador de intercambios para medir rendimiento. \\
+\hline
+{\em mostrar} & Verdadero para imprimir el proceso paso a paso en consola. \\
+\hline
+\end{DoxyParams}

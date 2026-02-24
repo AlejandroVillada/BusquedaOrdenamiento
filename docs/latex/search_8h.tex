@@ -1,0 +1,68 @@
+\doxysection{busqueda\+Ordenamiento/\+search.h File Reference}
+\hypertarget{search_8h}{}\label{search_8h}\index{busquedaOrdenamiento/search.h@{busquedaOrdenamiento/search.h}}
+
+
+Declaracion de las funciones de busqueda secuencial y binaria.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{search_8h_a75e6fd1d78c3b2e70ff37a3b5b3cc7c4}{busqueda\+Secuencial}} (int arreglo\+[$\,$]\+, int n, int valor)
+\begin{DoxyCompactList}\small\item\em Recorre el arreglo elemento por elemento de inicio a fin. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{search_8h_adcc1bc85b9363ce92f06219f04ac8f64}{busqueda\+Binaria}} (int arreglo\+[$\,$]\+, int n, int valor)
+\begin{DoxyCompactList}\small\item\em Corta el espacio de busqueda a la mitad repetidamente (requiere arreglo ordenado). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaracion de las funciones de busqueda secuencial y binaria. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{search_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{search_8h_adcc1bc85b9363ce92f06219f04ac8f64}\index{search.h@{search.h}!busquedaBinaria@{busquedaBinaria}}
+\index{busquedaBinaria@{busquedaBinaria}!search.h@{search.h}}
+\doxysubsubsection{\texorpdfstring{busquedaBinaria()}{busquedaBinaria()}}
+{\footnotesize\ttfamily \label{search_8h_adcc1bc85b9363ce92f06219f04ac8f64} 
+int busqueda\+Binaria (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{, }\item[{int}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Corta el espacio de busqueda a la mitad repetidamente (requiere arreglo ordenado). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em valor} & El numero entero que se desea encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La posicion (indice) del valor, o -\/1 si no se encuentra. 
+\end{DoxyReturn}
+\Hypertarget{search_8h_a75e6fd1d78c3b2e70ff37a3b5b3cc7c4}\index{search.h@{search.h}!busquedaSecuencial@{busquedaSecuencial}}
+\index{busquedaSecuencial@{busquedaSecuencial}!search.h@{search.h}}
+\doxysubsubsection{\texorpdfstring{busquedaSecuencial()}{busquedaSecuencial()}}
+{\footnotesize\ttfamily \label{search_8h_a75e6fd1d78c3b2e70ff37a3b5b3cc7c4} 
+int busqueda\+Secuencial (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{, }\item[{int}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Recorre el arreglo elemento por elemento de inicio a fin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em valor} & El numero entero que se desea encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La posicion (indice) del valor, o -\/1 si no se encuentra. 
+\end{DoxyReturn}

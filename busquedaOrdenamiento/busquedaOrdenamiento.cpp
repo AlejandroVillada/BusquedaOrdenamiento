@@ -1,3 +1,9 @@
+/**
+ * @file busquedaOrdenamiento.cpp
+ * @brief Controlador principal del proyecto estructurado.
+ * * Actua como puente entre la interfaz de usuario y los algoritmos,
+ * gestionando ademas el ciclo de vida y el estado de la memoria del arreglo.
+ */
 #include <iostream>
 #include "search.h"
 #include "sort.h"

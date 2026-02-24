@@ -1,0 +1,130 @@
+\doxysection{busqueda\+Ordenamiento/\+\+Utils.h File Reference}
+\hypertarget{_utils_8h}{}\label{_utils_8h}\index{busquedaOrdenamiento/Utils.h@{busquedaOrdenamiento/Utils.h}}
+
+
+Declaracion de utilidades para generacion de arreglos y medicion de tiempos.  
+
+
+{\ttfamily \+\#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_utils_8h_a9c66d2727ad75aa1fd1a020c8ac91f05}{generar\+Arreglo}} (int \texorpdfstring{$\ast$}{*}\&arreglo, int n, bool unicos)
+\begin{DoxyCompactList}\small\item\em Prepara la estructura de datos dinamicamente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_utils_8h_abbd980cb3b37e661b06b66154e508a6e}{medir\+Tiempo}} (void(\texorpdfstring{$\ast$}{*}func)(int \texorpdfstring{$\ast$}{*}, int, bool), int \texorpdfstring{$\ast$}{*}arreglo, int n, std::\+string nombre\+Algoritmo)
+\begin{DoxyCompactList}\small\item\em Ejecuta el algoritmo solicitado midiendo su tiempo en nanosegundos. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_utils_8h_a4f43a74758e963150b5a4b67d518170f}{medir\+Tiempo\+Rec}} (void(\texorpdfstring{$\ast$}{*}func)(int \texorpdfstring{$\ast$}{*}, int, int, int \&, int \&, bool), int \texorpdfstring{$\ast$}{*}arreglo, int n, std::\+string nombre\+Algoritmo)
+\begin{DoxyCompactList}\small\item\em Version del medidor de tiempo especificamente para Quick\+Sort. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_utils_8h_adcb0422cbccc12cdc660ea33d3619de4}{medir\+Tiempo\+Merge}} (void(\texorpdfstring{$\ast$}{*}func)(int \texorpdfstring{$\ast$}{*}, int, int, int \&, bool), int \texorpdfstring{$\ast$}{*}arreglo, int n, std::\+string nombre\+Algoritmo)
+\begin{DoxyCompactList}\small\item\em Version del medidor de tiempo especificamente para Merge\+Sort. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_utils_8h_a65f77143aa9ed97c5124c65a2f80db18}{desordenar\+Arreglo}} (int \texorpdfstring{$\ast$}{*}arreglo, int n)
+\begin{DoxyCompactList}\small\item\em Reordena los elementos de forma aleatoria destruyendo cualquier orden previo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaracion de utilidades para generacion de arreglos y medicion de tiempos. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_utils_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_utils_8h_a65f77143aa9ed97c5124c65a2f80db18}\index{Utils.h@{Utils.h}!desordenarArreglo@{desordenarArreglo}}
+\index{desordenarArreglo@{desordenarArreglo}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{desordenarArreglo()}{desordenarArreglo()}}
+{\footnotesize\ttfamily \label{_utils_8h_a65f77143aa9ed97c5124c65a2f80db18} 
+void desordenar\+Arreglo (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arreglo}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Reordena los elementos de forma aleatoria destruyendo cualquier orden previo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_utils_8h_a9c66d2727ad75aa1fd1a020c8ac91f05}\index{Utils.h@{Utils.h}!generarArreglo@{generarArreglo}}
+\index{generarArreglo@{generarArreglo}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{generarArreglo()}{generarArreglo()}}
+{\footnotesize\ttfamily \label{_utils_8h_a9c66d2727ad75aa1fd1a020c8ac91f05} 
+void generar\+Arreglo (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\&}]{arreglo}{, }\item[{int}]{n}{, }\item[{bool}]{unicos}{}\end{DoxyParamCaption})}
+
+
+
+Prepara la estructura de datos dinamicamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Referencia al puntero del arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em unicos} & Verdadero para generar sin repeticiones, Falso para aleatorios puros. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_utils_8h_abbd980cb3b37e661b06b66154e508a6e}\index{Utils.h@{Utils.h}!medirTiempo@{medirTiempo}}
+\index{medirTiempo@{medirTiempo}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{medirTiempo()}{medirTiempo()}}
+{\footnotesize\ttfamily \label{_utils_8h_abbd980cb3b37e661b06b66154e508a6e} 
+void medir\+Tiempo (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int \texorpdfstring{$\ast$}{*}, int, bool), }\item[{int \texorpdfstring{$\ast$}{*}}]{arreglo}{, }\item[{int}]{n}{, }\item[{std::\+string}]{nombre\+Algoritmo}{}\end{DoxyParamCaption})}
+
+
+
+Ejecuta el algoritmo solicitado midiendo su tiempo en nanosegundos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Puntero a la funcion de ordenamiento basica. \\
+\hline
+{\em arreglo} & Puntero al arreglo original (se clonara para no afectarlo). \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em nombre\+Algoritmo} & Etiqueta para imprimir en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_utils_8h_adcb0422cbccc12cdc660ea33d3619de4}\index{Utils.h@{Utils.h}!medirTiempoMerge@{medirTiempoMerge}}
+\index{medirTiempoMerge@{medirTiempoMerge}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{medirTiempoMerge()}{medirTiempoMerge()}}
+{\footnotesize\ttfamily \label{_utils_8h_adcb0422cbccc12cdc660ea33d3619de4} 
+void medir\+Tiempo\+Merge (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int \texorpdfstring{$\ast$}{*}, int, int, int \&, bool), }\item[{int \texorpdfstring{$\ast$}{*}}]{arreglo}{, }\item[{int}]{n}{, }\item[{std::\+string}]{nombre\+Algoritmo}{}\end{DoxyParamCaption})}
+
+
+
+Version del medidor de tiempo especificamente para Merge\+Sort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Puntero a la funcion recursiva de Merge\+Sort. \\
+\hline
+{\em arreglo} & Puntero al arreglo original. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em nombre\+Algoritmo} & Etiqueta para imprimir en consola. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_utils_8h_a4f43a74758e963150b5a4b67d518170f}\index{Utils.h@{Utils.h}!medirTiempoRec@{medirTiempoRec}}
+\index{medirTiempoRec@{medirTiempoRec}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{medirTiempoRec()}{medirTiempoRec()}}
+{\footnotesize\ttfamily \label{_utils_8h_a4f43a74758e963150b5a4b67d518170f} 
+void medir\+Tiempo\+Rec (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int \texorpdfstring{$\ast$}{*}, int, int, int \&, int \&, bool), }\item[{int \texorpdfstring{$\ast$}{*}}]{arreglo}{, }\item[{int}]{n}{, }\item[{std::\+string}]{nombre\+Algoritmo}{}\end{DoxyParamCaption})}
+
+
+
+Version del medidor de tiempo especificamente para Quick\+Sort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Puntero a la funcion recursiva de Quick\+Sort. \\
+\hline
+{\em arreglo} & Puntero al arreglo original. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+{\em nombre\+Algoritmo} & Etiqueta para imprimir en consola. \\
+\hline
+\end{DoxyParams}

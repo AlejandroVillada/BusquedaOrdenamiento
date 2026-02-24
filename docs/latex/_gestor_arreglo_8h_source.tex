@@ -1,0 +1,54 @@
+\doxysection{Gestor\+Arreglo.\+h}
+\hypertarget{_gestor_arreglo_8h_source}{}\label{_gestor_arreglo_8h_source}\index{busquedaOrdenamientoPOO/GestorArreglo.h@{busquedaOrdenamientoPOO/GestorArreglo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GESTOR\_ARREGLO\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GESTOR\_ARREGLO\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_gestor_arreglo_ad38fd16db338c5d3de579fae12277870}{GestorArreglo}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}*\ arreglo;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ estaOrdenado;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ quickSortRec(\textcolor{keywordtype}{int}*\ arr,\ \textcolor{keywordtype}{int}\ izquierda,\ \textcolor{keywordtype}{int}\ derecha,\ \textcolor{keywordtype}{int}\&\ comp,\ \textcolor{keywordtype}{int}\&\ inter,\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ merge(\textcolor{keywordtype}{int}*\ arr,\ \textcolor{keywordtype}{int}\ izquierda,\ \textcolor{keywordtype}{int}\ medio,\ \textcolor{keywordtype}{int}\ derecha,\ \textcolor{keywordtype}{int}\&\ comp,\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ mergeSortRec(\textcolor{keywordtype}{int}*\ arr,\ \textcolor{keywordtype}{int}\ izquierda,\ \textcolor{keywordtype}{int}\ derecha,\ \textcolor{keywordtype}{int}\&\ comp,\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \doxymbox{\hyperlink{class_gestor_arreglo_ad38fd16db338c5d3de579fae12277870}{GestorArreglo}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{class_gestor_arreglo_ae3fb8b4cbe24150b4ab785ed3940ce07}{\string~GestorArreglo}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a80547101b614d22fead9f432c2b086c8}{configurar}}(\textcolor{keywordtype}{int}\ tam,\ \textcolor{keywordtype}{bool}\ unicos);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a2198c45e1cd2a9db7cd8514249b6cbc0}{desordenar}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a1cc1187bd7bc626466948d061f9ea8aa}{getEstaOrdenado}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_gestor_arreglo_aee91ab7511d6c03c431c591569640800}{getN}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_gestor_arreglo_a01a38c323b26f41affcb9659ee8e0929}{busquedaSecuencial}}(\textcolor{keywordtype}{int}\ valor);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_gestor_arreglo_af9b7e167e7cdc6cd7a91c2f1864dcbc6}{busquedaBinaria}}(\textcolor{keywordtype}{int}\ valor);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a96537d60d09c738fa5d9ef58384ad2cf}{ordenarBurbuja}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a62c6b6b7c155774b803617a217b8579e}{ordenarSeleccion}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a8bb7363a228a762a792c927f04957d1a}{ordenarInsercion}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_aea8ac2958b190a1daead1692eab67a39}{ordenarQuickSort}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_a22105a3139a6cea5e532e2f2676bdb68}{ordenarMergeSort}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_gestor_arreglo_a36873ca5b4265f4e0d8d145c6a46ed56}{mostrar}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_gestor_arreglo_aba9b785f6c6d42016e65229a69bf710d}{compararTiempos}}();}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

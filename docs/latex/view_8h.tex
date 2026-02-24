@@ -1,0 +1,131 @@
+\doxysection{busqueda\+Ordenamiento/\+view.h File Reference}
+\hypertarget{view_8h}{}\label{view_8h}\index{busquedaOrdenamiento/view.h@{busquedaOrdenamiento/view.h}}
+
+
+Declaracion de las funciones para la interfaz de usuario en consola.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{view_8h_a104d3a852326f8dd86a3b9b5fee17c7d}{mostrar\+Menu}} (bool esta\+Ordenado)
+\begin{DoxyCompactList}\small\item\em Despliega las opciones principales y anade dinamicamente la opcion de desordenar. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{view_8h_afd6df2510401f6e3589246083fb2b474}{mostrar\+Arreglo}} (int arreglo\+[$\,$]\+, int n)
+\begin{DoxyCompactList}\small\item\em Imprime los elementos en consola de manera secuencial. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{view_8h_af04796db10787812a2067e24fa59a968}{pedir\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Solicita al usuario el numero especifico que desea localizar. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{view_8h_a43d509d542aa7504b3529820da872262}{mostrar\+Menu\+Ordenamiento}} ()
+\begin{DoxyCompactList}\small\item\em Despliega el sub-\/menu con los algoritmos de clasificacion disponibles. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{view_8h_a3850ffb072bd92bcd52ecf23d2562a98}{pedir\+Tamanio}} ()
+\begin{DoxyCompactList}\small\item\em Define la cantidad total de elementos que contendra el arreglo dinamico. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{view_8h_a3beb010f45f97c3bb6f0132c4487f009}{pedir\+Si\+Repetir}} ()
+\begin{DoxyCompactList}\small\item\em Determina el comportamiento del generador aleatorio. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{view_8h_a007e83a2f23f40a824c3973ecfbf06dd}{pedir\+Mostrar\+Proceso}} ()
+\begin{DoxyCompactList}\small\item\em Activa o desactiva la impresion en consola de los pasos intermedios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaracion de las funciones para la interfaz de usuario en consola. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{view_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{view_8h_afd6df2510401f6e3589246083fb2b474}\index{view.h@{view.h}!mostrarArreglo@{mostrarArreglo}}
+\index{mostrarArreglo@{mostrarArreglo}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{mostrarArreglo()}{mostrarArreglo()}}
+{\footnotesize\ttfamily \label{view_8h_afd6df2510401f6e3589246083fb2b474} 
+void mostrar\+Arreglo (\begin{DoxyParamCaption}\item[{int}]{arreglo}{\+[$\,$]\+, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Imprime los elementos en consola de manera secuencial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arreglo} & Puntero al arreglo de enteros. \\
+\hline
+{\em n} & Tamano del arreglo (N). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{view_8h_a104d3a852326f8dd86a3b9b5fee17c7d}\index{view.h@{view.h}!mostrarMenu@{mostrarMenu}}
+\index{mostrarMenu@{mostrarMenu}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{mostrarMenu()}{mostrarMenu()}}
+{\footnotesize\ttfamily \label{view_8h_a104d3a852326f8dd86a3b9b5fee17c7d} 
+void mostrar\+Menu (\begin{DoxyParamCaption}\item[{bool}]{esta\+Ordenado}{}\end{DoxyParamCaption})}
+
+
+
+Despliega las opciones principales y anade dinamicamente la opcion de desordenar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em esta\+Ordenado} & Verdadero si el arreglo ya fue procesado, habilita la opcion 7. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{view_8h_a43d509d542aa7504b3529820da872262}\index{view.h@{view.h}!mostrarMenuOrdenamiento@{mostrarMenuOrdenamiento}}
+\index{mostrarMenuOrdenamiento@{mostrarMenuOrdenamiento}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{mostrarMenuOrdenamiento()}{mostrarMenuOrdenamiento()}}
+{\footnotesize\ttfamily \label{view_8h_a43d509d542aa7504b3529820da872262} 
+int mostrar\+Menu\+Ordenamiento (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Despliega el sub-\/menu con los algoritmos de clasificacion disponibles. 
+
+\begin{DoxyReturn}{Returns}
+El numero de la opcion seleccionada por el usuario. 
+\end{DoxyReturn}
+\Hypertarget{view_8h_a007e83a2f23f40a824c3973ecfbf06dd}\index{view.h@{view.h}!pedirMostrarProceso@{pedirMostrarProceso}}
+\index{pedirMostrarProceso@{pedirMostrarProceso}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{pedirMostrarProceso()}{pedirMostrarProceso()}}
+{\footnotesize\ttfamily \label{view_8h_a007e83a2f23f40a824c3973ecfbf06dd} 
+bool pedir\+Mostrar\+Proceso (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Activa o desactiva la impresion en consola de los pasos intermedios. 
+
+\begin{DoxyReturn}{Returns}
+Verdadero si el usuario desea ver el proceso, Falso de lo contrario. 
+\end{DoxyReturn}
+\Hypertarget{view_8h_a3beb010f45f97c3bb6f0132c4487f009}\index{view.h@{view.h}!pedirSiRepetir@{pedirSiRepetir}}
+\index{pedirSiRepetir@{pedirSiRepetir}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{pedirSiRepetir()}{pedirSiRepetir()}}
+{\footnotesize\ttfamily \label{view_8h_a3beb010f45f97c3bb6f0132c4487f009} 
+bool pedir\+Si\+Repetir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Determina el comportamiento del generador aleatorio. 
+
+\begin{DoxyReturn}{Returns}
+Verdadero si se permiten repetidos, Falso para unicos. 
+\end{DoxyReturn}
+\Hypertarget{view_8h_a3850ffb072bd92bcd52ecf23d2562a98}\index{view.h@{view.h}!pedirTamanio@{pedirTamanio}}
+\index{pedirTamanio@{pedirTamanio}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{pedirTamanio()}{pedirTamanio()}}
+{\footnotesize\ttfamily \label{view_8h_a3850ffb072bd92bcd52ecf23d2562a98} 
+int pedir\+Tamanio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Define la cantidad total de elementos que contendra el arreglo dinamico. 
+
+\begin{DoxyReturn}{Returns}
+El tamano (N) ingresado por el usuario. 
+\end{DoxyReturn}
+\Hypertarget{view_8h_af04796db10787812a2067e24fa59a968}\index{view.h@{view.h}!pedirValor@{pedirValor}}
+\index{pedirValor@{pedirValor}!view.h@{view.h}}
+\doxysubsubsection{\texorpdfstring{pedirValor()}{pedirValor()}}
+{\footnotesize\ttfamily \label{view_8h_af04796db10787812a2067e24fa59a968} 
+int pedir\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita al usuario el numero especifico que desea localizar. 
+
+\begin{DoxyReturn}{Returns}
+El numero entero ingresado por el usuario. 
+\end{DoxyReturn}

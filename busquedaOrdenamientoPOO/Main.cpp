@@ -1,3 +1,9 @@
+/**
+ * @file Main.cpp
+ * @brief Controlador principal del proyecto Orientado a Objetos.
+ * * Despliega la interfaz de usuario e instancia el objeto GestorArreglo,
+ * delegando asi toda la logica de datos y procesamiento.
+ */
 #include <iostream>
 #include "GestorArreglo.h"
 

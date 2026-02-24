@@ -1,0 +1,76 @@
+\doxysection{busqueda\+Ordenamiento\+POO/\+\+Main.cpp File Reference}
+\hypertarget{_main_8cpp}{}\label{_main_8cpp}\index{busquedaOrdenamientoPOO/Main.cpp@{busquedaOrdenamientoPOO/Main.cpp}}
+
+
+Controlador principal del proyecto Orientado a Objetos.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include "{}Gestor\+Arreglo.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{_main_8cpp_a3850ffb072bd92bcd52ecf23d2562a98}{pedir\+Tamanio}} ()
+\begin{DoxyCompactList}\small\item\em Define la cantidad total de elementos que contendra el arreglo dinamico. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_main_8cpp_a3beb010f45f97c3bb6f0132c4487f009}{pedir\+Si\+Repetir}} ()
+\begin{DoxyCompactList}\small\item\em Determina el comportamiento del generador aleatorio. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{_main_8cpp_af04796db10787812a2067e24fa59a968}{pedir\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Solicita al usuario el numero especifico que desea localizar. \end{DoxyCompactList}\item 
+\Hypertarget{_main_8cpp_a4b1b89a1907d619be3a4230708b3f797}\label{_main_8cpp_a4b1b89a1907d619be3a4230708b3f797} 
+void {\bfseries mostrar\+Menu\+Principal} (bool esta\+Ordenado)
+\item 
+\Hypertarget{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlador principal del proyecto Orientado a Objetos. 
+
+
+\begin{DoxyItemize}
+\item Despliega la interfaz de usuario e instancia el objeto \doxylink{class_gestor_arreglo}{Gestor\+Arreglo}, delegando asi toda la logica de datos y procesamiento. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{_main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_main_8cpp_a3beb010f45f97c3bb6f0132c4487f009}\index{Main.cpp@{Main.cpp}!pedirSiRepetir@{pedirSiRepetir}}
+\index{pedirSiRepetir@{pedirSiRepetir}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{pedirSiRepetir()}{pedirSiRepetir()}}
+{\footnotesize\ttfamily \label{_main_8cpp_a3beb010f45f97c3bb6f0132c4487f009} 
+bool pedir\+Si\+Repetir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Determina el comportamiento del generador aleatorio. 
+
+\begin{DoxyReturn}{Returns}
+Verdadero si se permiten repetidos, Falso para unicos. 
+\end{DoxyReturn}
+\Hypertarget{_main_8cpp_a3850ffb072bd92bcd52ecf23d2562a98}\index{Main.cpp@{Main.cpp}!pedirTamanio@{pedirTamanio}}
+\index{pedirTamanio@{pedirTamanio}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{pedirTamanio()}{pedirTamanio()}}
+{\footnotesize\ttfamily \label{_main_8cpp_a3850ffb072bd92bcd52ecf23d2562a98} 
+int pedir\+Tamanio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Define la cantidad total de elementos que contendra el arreglo dinamico. 
+
+\begin{DoxyReturn}{Returns}
+El tamano (N) ingresado por el usuario. 
+\end{DoxyReturn}
+\Hypertarget{_main_8cpp_af04796db10787812a2067e24fa59a968}\index{Main.cpp@{Main.cpp}!pedirValor@{pedirValor}}
+\index{pedirValor@{pedirValor}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{pedirValor()}{pedirValor()}}
+{\footnotesize\ttfamily \label{_main_8cpp_af04796db10787812a2067e24fa59a968} 
+int pedir\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita al usuario el numero especifico que desea localizar. 
+
+\begin{DoxyReturn}{Returns}
+El numero entero ingresado por el usuario. 
+\end{DoxyReturn}

@@ -1,7 +1,7 @@
 /**
  * @file Main.cpp
  * @brief Controlador principal del proyecto Orientado a Objetos.
- * * Despliega la interfaz de usuario e instancia el objeto GestorArreglo,
+ * Despliega la interfaz de usuario e instancia el objeto GestorArreglo,
  * delegando asi toda la logica de datos y procesamiento.
  */
 #include <iostream>
@@ -9,7 +9,6 @@
 
 using namespace std;
 
-// Solicitud modular de configuracion general.
 int pedirTamanio() {
     int n;
     cout << "\n=== CONFIGURACION DE ARREGLO ===\n";
@@ -18,7 +17,6 @@ int pedirTamanio() {
     return n;
 }
 
-// Define la creacion de numeros repetitivos o estrictamente unicos.
 bool pedirSiRepetir() {
     int op;
     cout << "Desea numeros repetidos?\n1. Si (Aleatorios puros)\n2. No (Unicos 0..N)\nOpcion: ";
@@ -26,7 +24,6 @@ bool pedirSiRepetir() {
     return (op == 1);
 }
 
-// Solicita el objetivo de las funciones de busqueda.
 int pedirValor() {
     int valor;
     cout << "Ingrese valor a buscar: ";
@@ -34,7 +31,6 @@ int pedirValor() {
     return valor;
 }
 
-// Imprime las operaciones de capa superior.
 void mostrarMenuPrincipal(bool estaOrdenado) {
     cout << "\n=== MENU ===\n";
     cout << "1. Busqueda Secuencial\n";
@@ -47,7 +43,6 @@ void mostrarMenuPrincipal(bool estaOrdenado) {
     cout << "Seleccione opcion: ";
 }
 
-// Archivo principal. Despliega la interfaz de usuario e instancia el objeto GestorArreglo, delegando asi toda la logica de datos.
 int main()
 {
     int opcion;
@@ -96,6 +91,16 @@ int main()
             cin >> opPasos;
             mostrarPasos = (opPasos == 1);
 
+            // PROTECCION CONTRA COLAPSO DE CONSOLA
+            if (mostrarPasos && gestor.getN() > 50) {
+                cout << "\n[!] Proteccion de consola: Ocultando pasos (Imprimir N > 50 trabaria tu equipo).\n";
+                mostrarPasos = false;
+            }
+
+            if (gestor.getN() > 10000 && metodo >= 1 && metodo <= 3) {
+                cout << "\n[!] Ordenando arreglo masivo. Esto tomara varios segundos, paciencia...\n";
+            }
+
             if (metodo == 1) gestor.ordenarBurbuja(mostrarPasos);
             else if (metodo == 2) gestor.ordenarSeleccion(mostrarPasos);
             else if (metodo == 3) gestor.ordenarInsercion(mostrarPasos);
@@ -120,6 +125,7 @@ int main()
             break;
 
         case 6:
+            if (gestor.getN() > 10000) cout << "\nCalculando... esto tomara tiempo por los metodos lentos.\n";
             gestor.compararTiempos();
             break;
 

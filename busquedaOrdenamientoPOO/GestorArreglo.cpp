@@ -57,7 +57,7 @@ void GestorArreglo::configurar(int tam, bool unicos)
     }
 }
 
-// Revuelve los elementos actuales usando una semilla de tiempo real, por lo tanto, destruye cualquier orden previo.
+// Revuelve los elementos actuales usando una semilla de tiempo real.
 void GestorArreglo::desordenar()
 {
     unsigned int seed = (unsigned int)system_clock::now().time_since_epoch().count();
@@ -65,7 +65,7 @@ void GestorArreglo::desordenar()
     estaOrdenado = false;
 }
 
-// Despliega el contenido en pantalla, sin embargo, limita la impresion a 50 elementos para evitar saturacion.
+// Despliega el contenido en pantalla limitando la impresion a 50 elementos.
 void GestorArreglo::mostrar()
 {
     if (n > 50) {
@@ -89,7 +89,7 @@ int GestorArreglo::busquedaSecuencial(int valor)
     return -1;
 }
 
-// Asegura el ordenamiento previo y busca el valor seccionando el arreglo por mitades.
+// Asegura el ordenamiento previo y busca el valor seccionando el arreglo.
 int GestorArreglo::busquedaBinaria(int valor)
 {
     if (!estaOrdenado) ordenarQuickSort(false);
@@ -104,7 +104,6 @@ int GestorArreglo::busquedaBinaria(int valor)
     return -1;
 }
 
-// Ordena moviendo los valores altos al fondo iterativamente.
 void GestorArreglo::ordenarBurbuja(bool mostrarPasos)
 {
     int i, j, temp;
@@ -121,7 +120,6 @@ void GestorArreglo::ordenarBurbuja(bool mostrarPasos)
     estaOrdenado = true;
 }
 
-// Posiciona el valor mas bajo encontrado al inicio del ciclo actual.
 void GestorArreglo::ordenarSeleccion(bool mostrarPasos)
 {
     int i, j, min, temp;
@@ -138,7 +136,6 @@ void GestorArreglo::ordenarSeleccion(bool mostrarPasos)
     estaOrdenado = true;
 }
 
-// Inserta cada numero en su lugar correspondiente desplazando los demas a la derecha.
 void GestorArreglo::ordenarInsercion(bool mostrarPasos)
 {
     int i, j, clave;
@@ -155,7 +152,6 @@ void GestorArreglo::ordenarInsercion(bool mostrarPasos)
     estaOrdenado = true;
 }
 
-// Fragmenta la informacion basandose en un pivote central recursivamente.
 void GestorArreglo::quickSortRec(int* arr, int izquierda, int derecha, int& comparaciones, int& intercambios, bool mostrarPasos)
 {
     int i = izquierda, j = derecha;
@@ -183,7 +179,6 @@ void GestorArreglo::ordenarQuickSort(bool mostrarPasos)
     estaOrdenado = true;
 }
 
-// Fusiona sub-listas preordenadas instanciando memoria temporal.
 void GestorArreglo::merge(int* arr, int izquierda, int medio, int derecha, int& comparaciones, bool mostrarPasos)
 {
     int i = izquierda, j = medio + 1, k = 0;
@@ -203,7 +198,6 @@ void GestorArreglo::merge(int* arr, int izquierda, int medio, int derecha, int& 
     delete[] temp;
 }
 
-// Separa el arreglo iterativamente por mitades para procesar su orden.
 void GestorArreglo::mergeSortRec(int* arr, int izquierda, int derecha, int& comparaciones, bool mostrarPasos)
 {
     int medio;
@@ -222,7 +216,7 @@ void GestorArreglo::ordenarMergeSort(bool mostrarPasos)
     estaOrdenado = true;
 }
 
-// Crea un entorno aislado clonando el arreglo original, ejecuta cada metodo midiendo su duracion exacta y finalmente restaura los datos.
+// Crea un entorno aislado clonando el arreglo, ejecuta cada metodo midiendo su duracion exacta y restaura los datos.
 void GestorArreglo::compararTiempos()
 {
     cout << "\n=== TIEMPOS DE EJECUCION (N=" << n << ") ===\n";

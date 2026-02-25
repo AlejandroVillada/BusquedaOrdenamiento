@@ -1,29 +1,26 @@
 /**
  * @file busquedaOrdenamiento.cpp
  * @brief Controlador principal del proyecto estructurado.
- * * Actua como puente entre la interfaz de usuario y los algoritmos,
+ * Actua como puente entre la interfaz de usuario y los algoritmos,
  * gestionando ademas el ciclo de vida y el estado de la memoria del arreglo.
  */
 #include <iostream>
 #include "search.h"
 #include "sort.h"
 #include "view.h"
-#include "utils.h" // Incluimos nuestras nuevas utilidades
+#include "utils.h"
 
 using namespace std;
 
-// Controlador principal. Actua como puente entre la interfaz de usuario y los algoritmos, gestionando ademas el ciclo de vida y el estado de la memoria del arreglo.
 int main()
 {
     int opcion;
     int metodo;
-    int* arreglo = nullptr;
+    int* arreglo = nullptr; // Garantizamos memoria 100% dinamica
     int n = 0;
     int posicion, valor;
     int comparaciones = 0, intercambios = 0;
     bool mostrarPasos = false;
-
-    // Nueva variable para controlar la aparicion de la Opcion 7
     bool estaOrdenado = false;
 
     n = pedirTamanio();
@@ -40,7 +37,6 @@ int main()
 
     do
     {
-        // Pasamos la variable para que el menu sepa si mostrar la opcion 7 o no
         mostrarMenu(estaOrdenado);
         cin >> opcion;
 
@@ -57,7 +53,7 @@ int main()
         case 2:
             cout << "\nPara binaria, primero ordenamos (QuickSort silencioso)...\n";
             quickSort(arreglo, 0, n - 1, comparaciones, intercambios, false);
-            estaOrdenado = true; // La busqueda binaria lo ordena!
+            estaOrdenado = true;
             valor = pedirValor();
             posicion = busquedaBinaria(arreglo, n, valor);
             if (posicion != -1) cout << "Valor encontrado en pos: " << posicion << endl;
@@ -69,13 +65,24 @@ int main()
             mostrarPasos = pedirMostrarProceso();
             comparaciones = 0; intercambios = 0;
 
+            // PROTECCION CONTRA COLAPSO DE CONSOLA
+            if (mostrarPasos && n > 50) {
+                cout << "\n[!] Proteccion de consola: Ocultando pasos (Imprimir N > 50 trabaria tu equipo).\n";
+                mostrarPasos = false;
+            }
+
+            // Aviso de paciencia para O(N^2) con muchos datos
+            if (n > 10000 && metodo >= 1 && metodo <= 3) {
+                cout << "\n[!] Ordenando arreglo masivo. Esto tomara varios segundos, paciencia...\n";
+            }
+
             if (metodo == 1) ordenarBurbuja(arreglo, n, mostrarPasos);
             else if (metodo == 2) ordenarSeleccion(arreglo, n, mostrarPasos);
             else if (metodo == 3) ordenarInsercion(arreglo, n, mostrarPasos);
             else if (metodo == 4) quickSort(arreglo, 0, n - 1, comparaciones, intercambios, mostrarPasos);
             else if (metodo == 5) mergeSort(arreglo, 0, n - 1, comparaciones, mostrarPasos);
 
-            estaOrdenado = true; // Marcamos que el arreglo ya se ordeno
+            estaOrdenado = true;
 
             if (n <= 50) {
                 cout << "\nArreglo ordenado:\n";
@@ -94,13 +101,14 @@ int main()
             n = pedirTamanio();
             repetir = pedirSiRepetir();
             generarArreglo(arreglo, n, !repetir);
-            estaOrdenado = false; // Al regenerarlo, nace desordenado
+            estaOrdenado = false;
             cout << "\nNuevo arreglo generado.\n";
             if (n <= 50) mostrarArreglo(arreglo, n);
             break;
 
         case 6:
             cout << "\n=== TIEMPOS DE EJECUCION (N=" << n << ") ===\n";
+            if (n > 10000) cout << "Calculando... esto tomara tiempo por los metodos lentos.\n";
             medirTiempo(ordenarBurbuja, arreglo, n, "Burbuja");
             medirTiempo(ordenarSeleccion, arreglo, n, "Seleccion");
             medirTiempo(ordenarInsercion, arreglo, n, "Insercion");
@@ -109,10 +117,9 @@ int main()
             break;
 
         case 7:
-            // Solo permitimos desordenar si efectivamente esta ordenado
             if (estaOrdenado) {
                 desordenarArreglo(arreglo, n);
-                estaOrdenado = false; // Ya no esta ordenado
+                estaOrdenado = false;
                 cout << "\nArreglo revuelto nuevamente.\n";
                 if (n <= 50) mostrarArreglo(arreglo, n);
             }

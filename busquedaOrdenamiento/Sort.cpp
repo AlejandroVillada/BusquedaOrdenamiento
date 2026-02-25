@@ -36,7 +36,7 @@ void ordenarSeleccion(int arreglo[], int n, bool mostrar)
     }
 }
 
-// Acomoda cada elemento nuevo en su posicion correcta respecto a los anteriores, similar a ordenar cartas en la mano.
+// Acomoda cada elemento nuevo en su posicion correcta respecto a los anteriores.
 void ordenarInsercion(int arreglo[], int n, bool mostrar)
 {
     int i, j, clave;
@@ -52,7 +52,7 @@ void ordenarInsercion(int arreglo[], int n, bool mostrar)
     }
 }
 
-// Selecciona un punto de referencia (pivote) para dividir los datos; manda los menores a la izquierda y los mayores a la derecha.
+// Fragmenta la informacion basandose en un pivote central recursivamente.
 void quickSort(int arreglo[], int izquierda, int derecha, int& comparaciones, int& intercambios, bool mostrar)
 {
     int i = izquierda, j = derecha;
@@ -73,11 +73,11 @@ void quickSort(int arreglo[], int izquierda, int derecha, int& comparaciones, in
     if (i < derecha) quickSort(arreglo, i, derecha, comparaciones, intercambios, mostrar);
 }
 
-// Funcion auxiliar que fusiona dos sub-arreglos previamente ordenados en uno solo.
+// Funcion auxiliar que fusiona dos sub-arreglos instanciando memoria 100% dinamica.
 void merge(int arreglo[], int izquierda, int medio, int derecha, int& comparaciones, bool mostrar)
 {
     int i = izquierda, j = medio + 1, k = 0;
-    int* temp = new int[derecha - izquierda + 1](); // Memoria dinámica para el temporal
+    int* temp = new int[derecha - izquierda + 1](); // Seguro dinamico
 
     while (i <= medio && j <= derecha) {
         comparaciones++;
@@ -90,10 +90,10 @@ void merge(int arreglo[], int izquierda, int medio, int derecha, int& comparacio
     for (i = izquierda, k = 0; i <= derecha; i++, k++) arreglo[i] = temp[k];
 
     if (mostrar) cout << "[Merge] Fusionando rango " << izquierda << " a " << derecha << endl;
-    delete[] temp; // Importante liberar memoria
+    delete[] temp;
 }
 
-// Divide el arreglo por la mitad recursivamente hasta tener elementos individuales, para luego unirlos ordenados usando merge.
+// Divide el arreglo por la mitad recursivamente.
 void mergeSort(int arreglo[], int izquierda, int derecha, int& comparaciones, bool mostrar)
 {
     int medio;

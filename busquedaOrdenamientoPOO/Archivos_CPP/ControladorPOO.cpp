@@ -1,15 +1,16 @@
 /**
- * @file Main.cpp
- * @brief Controlador principal del proyecto Orientado a Objetos.
- * Despliega la interfaz de usuario e instancia el objeto GestorArreglo,
- * delegando asi toda la logica de datos y procesamiento.
+ * @file ControladorPOO.cpp
+ * @brief Implementacion de la clase controladora del proyecto Orientado a Objetos.
  */
+#include "ControladorPOO.h"
 #include <iostream>
-#include "GestorArreglo.h"
 
 using namespace std;
 
-int pedirTamanio() {
+ControladorPOO::ControladorPOO() {}
+ControladorPOO::~ControladorPOO() {}
+
+int ControladorPOO::pedirTamanio() {
     int n;
     cout << "\n=== CONFIGURACION DE ARREGLO ===\n";
     cout << "Ingrese el tamanio (N): ";
@@ -17,21 +18,21 @@ int pedirTamanio() {
     return n;
 }
 
-bool pedirSiRepetir() {
+bool ControladorPOO::pedirSiRepetir() {
     int op;
     cout << "Desea numeros repetidos?\n1. Si (Aleatorios puros)\n2. No (Unicos 0..N)\nOpcion: ";
     cin >> op;
     return (op == 1);
 }
 
-int pedirValor() {
+int ControladorPOO::pedirValor() {
     int valor;
     cout << "Ingrese valor a buscar: ";
     cin >> valor;
     return valor;
 }
 
-void mostrarMenuPrincipal(bool estaOrdenado) {
+void ControladorPOO::mostrarMenuPrincipal(bool estaOrdenado) {
     cout << "\n=== MENU ===\n";
     cout << "1. Busqueda Secuencial\n";
     cout << "2. Busqueda Binaria (ordena automaticamente)\n";
@@ -43,14 +44,11 @@ void mostrarMenuPrincipal(bool estaOrdenado) {
     cout << "Seleccione opcion: ";
 }
 
-int main()
-{
+void ControladorPOO::iniciar() {
     int opcion;
     int metodo;
     int posicion, valor;
     bool mostrarPasos = false;
-
-    GestorArreglo gestor;
 
     int n = pedirTamanio();
     bool repetir = pedirSiRepetir();
@@ -59,13 +57,11 @@ int main()
     cout << "\nArreglo generado correctamente.\n";
     gestor.mostrar();
 
-    do
-    {
+    do {
         mostrarMenuPrincipal(gestor.getEstaOrdenado());
         cin >> opcion;
 
-        switch (opcion)
-        {
+        switch (opcion) {
         case 1:
             gestor.mostrar();
             valor = pedirValor();
@@ -91,7 +87,6 @@ int main()
             cin >> opPasos;
             mostrarPasos = (opPasos == 1);
 
-            // PROTECCION CONTRA COLAPSO DE CONSOLA
             if (mostrarPasos && gestor.getN() > 50) {
                 cout << "\n[!] Proteccion de consola: Ocultando pasos (Imprimir N > 50 trabaria tu equipo).\n";
                 mostrarPasos = false;
@@ -144,6 +139,4 @@ int main()
         }
 
     } while (opcion != 4);
-
-    return 0;
 }
